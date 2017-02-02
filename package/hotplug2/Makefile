@@ -9,15 +9,15 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=hotplug2
 #PKG_REV:=201
-PKG_REV:=4
+PKG_REV:=cee172bd3e21b35e42b20d721ffe003afdb51b3f
 PKG_VERSION:=$(PKG_REV)
-PKG_RELEASE:=4
+PKG_RELEASE:=5
 
-PKG_SOURCE_PROTO:=svn
+PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=$(PKG_REV)
-PKG_SOURCE_SUBDIR:=hotplug2-$(PKG_VERSION)
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 #PKG_SOURCE_URL:=http://svn.nomi.cz/svn/isteve/hotplug2
-PKG_SOURCE_URL:=http://hotplug2.googlecode.com/svn/trunk
+PKG_SOURCE_URL:=https://github.com/rdebath/hotplug2
 PKG_SOURCE:=$(PKG_SOURCE_SUBDIR).tar.gz
 PKG_MAINTAINER:=Felix Fietkau <nbd@openwrt.org>
 #PKG_SOURCE_URL:=http://isteve.bofh.cz/~isteve/hotplug2
@@ -30,7 +30,7 @@ define Package/hotplug2
   CATEGORY:=Base system
   VERSION:=1.0-beta-$(PKG_RELEASE)
   TITLE:=Version 1.0 Dynamic device management subsystem for embedded systems
-  URL:=http://isteve.bofh.cz/~isteve/hotplug2/
+  URL:=https://github.com/rdebath/hotplug2
   DEPENDS:=+USE_EGLIBC:libbsd @!PROCD_INIT
 endef
 
